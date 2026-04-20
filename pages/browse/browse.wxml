@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="vr-container">
+    <swiper class="vr-swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="5000" duration="1000">
+      <swiper-item wx:for="{{vrImages}}" wx:key="index">
+        <image class="vr-image" src="{{item}}" mode="aspectFill"></image>
+      </swiper-item>
+    </swiper>
+    <view class="vr-overlay">
+      <text class="vr-title">{{attractionName}}</text>
+      <view class="vr-controls">
+        <view class="control-btn" bindtap="rotateLeft">
+          <text class="control-icon">←</text>
+        </view>
+        <view class="control-btn" bindtap="rotateRight">
+          <text class="control-icon">→</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="attraction-info">
+  <text class="title">{{attractionName}}</text>
+  <text class="subtitle">{{attractionLocation}}</text>
+  <text class="text">{{attractionDescription}}</text>
+  
+  <view class="route-section">
+    <text class="section-title">推荐路线</text>
+    <view wx:for="{{route}}" wx:key="id">
+      <view class="route-item">
+        <view class="route-step">{{item.step}}</view>
+        <text class="route-description">{{item.description}}</text>
+      </view>
+      <view class="divider"></view>
+    </view>
+  </view>
+</view>
+
+  <view class="action-buttons">
+    <view class="btn-primary" bindtap="startVR">开始VR体验</view>
+    <view class="btn-secondary" bindtap="share">分享景点</view>
+  </view>
+</view>

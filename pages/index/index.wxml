@@ -1,0 +1,63 @@
+  <!--搜索-->
+  <view class="search-box">
+  <view class="search-wrap">
+    <input class="search-ipt" type="text" placeholder="请输入关键词"/>
+  </view>
+</view>
+<!--探索-->
+<view class="container">
+  <view class="header">
+   <!--轮播图区域-->
+<swiper
+  indicator-dots="{{true}}" 
+  autoplay="{{true}}" 
+  interval="3000" 
+  duration="500"
+  circular="{{true}}">
+  <swiper-item><image src="/images2/1.jpg"></image></swiper-item>
+  <swiper-item><image src="/images2/2.jpg"></image></swiper-item>
+  <swiper-item><image src="/images2/3.jpg"></image></swiper-item>
+  <swiper-item><image src="/images2/4.jpg"></image></swiper-item>
+</swiper>
+</view>
+  </view>
+ 
+
+
+  <view class="card" bindtap="goToBrowse">
+    <view class="card-icon vr-icon"></view>
+    <view class="card-content">
+      <text class="title">VR   浏览</text>
+      <text class="text">沉浸式体验云南花游村全景</text>
+    </view>
+    <view class="card-arrow"></view>
+  </view>
+
+  <view class="card" bindtap="showAttractionDetail">
+    <view class="card-icon info-icon"></view>
+    <view class="card-content">
+      <text class="title">景点介绍</text>
+      <text class="text">了解景点的历史文化和特色介绍</text>
+    </view>
+    <view class="card-arrow"></view>
+  </view>
+
+  <view class="card" bindtap="showRoute">
+    <view class="card-icon route-icon"></view>
+    <view class="card-content">
+      <text class="title">路线推荐</text>
+      <text class="text">获取最佳游玩路线和实用攻略</text>
+    </view>
+    <view class="card-arrow"></view>
+  </view>
+
+  <view class="featured-attractions">
+    <text class="section-title">热门景点</text>
+    <view class="attraction-list">
+      <view class="attraction-item" wx:for="{{attractions}}" wx:key="id" bindtap="goToAttraction" data-id="{{item.id}}">
+        <image class="attraction-image" src="{{item.image}}" mode="aspectFill"></image>
+        <text class="attraction-name">{{item.name}}</text>
+        <text class="attraction-location">{{item.location}}</text>
+      </view>
+    </view>
+  </view>
